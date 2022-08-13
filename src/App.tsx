@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 
 const About = lazy(() => import("./pages/About.jsx"));
-const Users = lazy(() => import("./pages/Users.jsx"));
+const Wuzzle = lazy(() => import("./pages/Wuzzle.jsx"));
 
 const App: Component = () => {
   return (
@@ -22,13 +22,13 @@ const App: Component = () => {
         <Link href="/">Home</Link>
         <Link href="/login">Login</Link>
         <Link href="/about">About</Link>
-        <Link href="/users">Users</Link>
+        <Link href="/wuzzle">Wuzzle</Link>
       </header>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/about" element={<About />} />
-        <Route path="/users" element={<Users />} />
+        <Route path="/wuzzle" element={<Wuzzle />} />
       </Routes>
     </div>
   );

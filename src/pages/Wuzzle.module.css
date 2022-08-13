@@ -1,0 +1,40 @@
+.board {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  inset: 50%;
+  row-gap: var(--letter-gap);
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  column-gap: var(--letter-gap);
+}
+.box {
+  border-style: solid;
+  border-width: 2px;
+  border-color: grey;
+  background-color: #d7d7d7;
+  width: 50px;
+  height: 50px;
+}
+.letter {
+  font-size: xx-large;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+}
+
+:global(.key.correct) {
+  background-color: var(--correct-color);
+  /* color: pink; */
+}
+:global(.key.present) {
+  background-color: var(--present-color);
+  /* color: pink; */
+}
+:global(.key.absent) {
+  background-color: var(--absent-color);
+  /* color: pink; */
+}

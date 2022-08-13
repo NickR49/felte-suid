@@ -1,0 +1,18 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  column-gap: var(--letter-gap);
+}
+.letter {
+  font-size: xx-large;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: white;
+  border-style: solid;
+  border-width: 2px;
+  border-color: grey;
+  background-color: rgb(209, 209, 209);
+  width: 50px;
+  height: 50px;
+  text-align: center;
+}
