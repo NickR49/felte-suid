@@ -8,8 +8,6 @@ import {
   onMount,
   Show,
 } from "solid-js";
-import Modal from "@suid/material/Modal";
-import Paper from "@suid/material/Paper";
 
 import PlayedRow from "../components/wuzzle/PlayedRow";
 import { nonSolutions } from "../components/wuzzle/nonSolutions";
@@ -18,6 +16,7 @@ import { daysBetween } from "../utils/dateUtils";
 import BlankRow from "../components/wuzzle/BlankRow";
 import playedLettersStore from "../components/wuzzle/playedLettersStore";
 import styles from "./Wuzzle.module.css";
+import Dialog from "../components/Dialog";
 
 export const dictionary = [...nonSolutions, ...solutions];
 
@@ -28,8 +27,8 @@ const Wuzzle: Component = () => {
   const solutionIndex = daysBetween(new Date("2021-06-19"), new Date());
   const word = solutions[solutionIndex];
 
-  console.log(`solutionIndex: `, solutionIndex);
-  console.log(`word: `, word);
+  // console.log(`solutionIndex: `, solutionIndex);
+  // console.log(`word: `, word);
 
   const [gameState, setGameState] = createSignal<"PLAYING" | "WON" | "LOST">(
     "PLAYING"
@@ -56,7 +55,12 @@ const Wuzzle: Component = () => {
       case "Backspace":
         if (guessLetterIndex() > 0) {
           setGuessLetterIndex((i) => i - 1);
-          currentGuess()[guessLetterIndex()] = "";
+          // currentGuess()[guessLetterIndex()] = "";
+          setCurrentGuess((currentGuess) => {
+            const newCurrentGuess = [...currentGuess];
+            newCurrentGuess[guessLetterIndex()] = "";
+            return newCurrentGuess;
+          });
         }
         break;
       case "Enter":
@@ -91,7 +95,6 @@ const Wuzzle: Component = () => {
         break;
       default:
         if (/^[a-zA-Z]$/.test(key) && guessLetterIndex() < 5) {
-          console.log(`Got letter `, key);
           // currentGuess[guessLetterIndex] = key.toLowerCase();
           setCurrentGuess((currentGuess) => {
             const guess = [...currentGuess];
@@ -104,7 +107,6 @@ const Wuzzle: Component = () => {
   }
 
   function handleWindowKeydown(event: KeyboardEvent) {
-    console.log(`handleWindowKeydown - `, event.key);
     event.preventDefault();
     handleKeydown(event.key);
   }
@@ -197,29 +199,26 @@ const Wuzzle: Component = () => {
 	keyClass={$playedLettersStore}
 /> */}
 
-      <Modal
+      <Dialog
         open={showInvalidWordModal()}
-        sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+        onClick={() => setShowInvalidWordModal(false)}
       >
-        <Paper sx={{ width: 400, height: 300, padding: 4 }}>
-          <h2 slot="header">{wittism()}</h2>
-          <button onClick={() => setShowInvalidWordModal(false)}>Close</button>
-        </Paper>
-      </Modal>
-      <Modal open={showWonModal()}>
+        <h2 slot="header">{wittism()}</h2>
+      </Dialog>
+
+      <Dialog open={showWonModal()} onClick={() => setShowWonModal(false)}>
         <h1>{userRating()}</h1>
         <h2 slot="header">
           You won in {guessIndex} move{guessIndex() === 1 ? "" : "s"}
           <Index each={Array(6 - guessIndex())}>{() => "!"}</Index>
         </h2>
-        <button onClick={() => setShowWonModal(false)}>Close</button>
-      </Modal>
-      <Modal open={showLostModal()}>
+      </Dialog>
+
+      <Dialog open={showLostModal()} onClick={() => setShowLostModal(false)}>
         <h2 slot="header">
           I'm dreadfully sorry but it appears that you have lost!!!
         </h2>
-        <button onClick={() => setShowLostModal(false)}>Close</button>
-      </Modal>
+      </Dialog>
     </div>
   );
 };
