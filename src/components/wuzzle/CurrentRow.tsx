@@ -1,8 +1,8 @@
 import { Component, createSignal, Index } from "solid-js";
+
 import styles from "./CurrentRow.module.css";
 
 const CurrentRow: Component = () => {
-  // const guess = ['', '', '', '', ''];
   const [guess] = createSignal(["", "", "", "", ""]);
 
   function handleKeyInput(event: KeyboardEvent) {

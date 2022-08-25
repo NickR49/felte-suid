@@ -1,34 +1,34 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@felte/solid': ^1.2.2
-  '@felte/validator-yup': ^1.0.8
+  '@felte/solid': ^1.2.3
+  '@felte/validator-yup': ^1.0.9
   '@suid/icons-material': ^0.2.6
   '@suid/material': ^0.5.0
   '@types/luxon': ^3.0.0
   luxon: ^3.0.1
   solid-app-router: ^0.4.2
-  solid-js: ^1.4.7
+  solid-js: ^1.4.8
   typescript: ^4.7.4
   vite: ^3.0.0
   vite-plugin-solid: ^2.3.0
   yup: ^0.32.11
 
 dependencies:
-  '@felte/solid': 1.2.2_solid-js@1.4.7
-  '@felte/validator-yup': 1.0.8_yup@0.32.11
-  '@suid/icons-material': 0.2.6_solid-js@1.4.7
-  '@suid/material': 0.5.0_solid-js@1.4.7
+  '@felte/solid': 1.2.3_solid-js@1.4.8
+  '@felte/validator-yup': 1.0.9_yup@0.32.11
+  '@suid/icons-material': 0.2.6_solid-js@1.4.8
+  '@suid/material': 0.5.0_solid-js@1.4.8
   luxon: 3.0.1
-  solid-app-router: 0.4.2_solid-js@1.4.7
-  solid-js: 1.4.7
+  solid-app-router: 0.4.2_solid-js@1.4.8
+  solid-js: 1.4.8
   yup: 0.32.11
 
 devDependencies:
   '@types/luxon': 3.0.0
   typescript: 4.7.4
   vite: 3.0.0
-  vite-plugin-solid: 2.3.0_solid-js@1.4.7+vite@3.0.0
+  vite-plugin-solid: 2.3.0_solid-js@1.4.8+vite@3.0.0
 
 packages:
 
@@ -346,35 +346,35 @@ packages:
       to-fast-properties: 2.0.0
     dev: true
 
-  /@felte/common/1.1.1:
-    resolution: {integrity: sha512-IRfz5mZmwchk70w2K4gz/dB49x2tDM4EMMx+TTpUW5ZbWhb6Bxj6hFJL7AXF9LWM5jCdUCPZo3V0KGQtrbkT7A==}
+  /@felte/common/1.1.2:
+    resolution: {integrity: sha512-RNSuI+x5BG7oocz0uY+jdkxYRFlRR/C4PZTvfi4mx9U23LzhNSSRG7gPhbQgO75L5YTB1lPwFKJry4uiVXxtwA==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dev: false
 
-  /@felte/core/1.3.2:
-    resolution: {integrity: sha512-xfn3yeATLpnDijyA36opnwZMSqjsHgp4a+KDSLCqhsC46bEFTO/XFQS/02YDSefNkqcwNlHI5E1BtOG0IUVh1w==}
+  /@felte/core/1.3.3:
+    resolution: {integrity: sha512-RcK3VBx6CL8O37tw8mWS44pfYkJQdxraT+eO5yHr9AjDpeqF4n864AcXnX7r6ists1EFXCXGMLSRrvY99cLFzw==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dependencies:
-      '@felte/common': 1.1.1
+      '@felte/common': 1.1.2
     dev: false
 
-  /@felte/solid/1.2.2_solid-js@1.4.7:
-    resolution: {integrity: sha512-OILVoxlVCuiwC0NYwc/XfDPDDJbBJwoSSFlhFhAS2rDGBgbSPYd0vG2ou9W+2AG1RcgsR2o4ZhLHP2U5vjvKhw==}
+  /@felte/solid/1.2.3_solid-js@1.4.8:
+    resolution: {integrity: sha512-Ieyj/LW9tueD+XB1t5C4B6a+D17B1wdiNHH1j9Vjl+dVZtfKngkNdxuzfwaaMv1ASRiBkWMMWQjoy3wwMdXevQ==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     peerDependencies:
       solid-js: ^1.2.0
     dependencies:
-      '@felte/core': 1.3.2
-      solid-js: 1.4.7
+      '@felte/core': 1.3.3
+      solid-js: 1.4.8
     dev: false
 
-  /@felte/validator-yup/1.0.8_yup@0.32.11:
-    resolution: {integrity: sha512-drlRLogYKQNBOfiXIvOdIAkM8yGDXWXHszIwt/Rd2RUJ5ow4rAxLaMds0iZ6Jt2hj0K9wLG62fpnqF5gmDeyaQ==}
+  /@felte/validator-yup/1.0.9_yup@0.32.11:
+    resolution: {integrity: sha512-G+l55qruWeJnO2x+dZ+A4o5YDclYUBoazCzVf3i3eUDO2aUgWxP0QEsEnjPAtJOU3rXYvjFO+0JTKNGUsybVeA==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     peerDependencies:
       yup: ^0.32.9
     dependencies:
-      '@felte/common': 1.1.1
+      '@felte/common': 1.1.2
       yup: 0.32.11
     dev: false
 
@@ -420,90 +420,90 @@ packages:
     resolution: {integrity: sha512-9X2obfABZuDVLCgPK9aX0a/x4jaOEweTTWE2+9sr0Qqqevj2Uv5XorvusThmc9XGYpS9yI+fhh8RTafBtGposw==}
     dev: false
 
-  /@suid/base/0.2.5_solid-js@1.4.7:
+  /@suid/base/0.2.5_solid-js@1.4.8:
     resolution: {integrity: sha512-wY2DBOxtpPp8LwRN6lUxjaPBv3TTPBYuNnu7H4YtrkoONFcZFDeP+W3GdQM0uAEfZKzDgjlVP3FveuvUd5OGsA==}
     peerDependencies:
       solid-js: ^1.3.0
     dependencies:
       '@popperjs/core': 2.11.5
-      '@suid/css': 0.1.4_solid-js@1.4.7
-      '@suid/system': 0.4.2_solid-js@1.4.7
-      '@suid/types': 0.1.2_solid-js@1.4.7
-      '@suid/utils': 0.3.0_solid-js@1.4.7
+      '@suid/css': 0.1.4_solid-js@1.4.8
+      '@suid/system': 0.4.2_solid-js@1.4.8
+      '@suid/types': 0.1.2_solid-js@1.4.8
+      '@suid/utils': 0.3.0_solid-js@1.4.8
       clsx: 1.2.1
-      solid-js: 1.4.7
+      solid-js: 1.4.8
     dev: false
 
-  /@suid/css/0.1.4_solid-js@1.4.7:
+  /@suid/css/0.1.4_solid-js@1.4.8:
     resolution: {integrity: sha512-FqG0nlZgOMl7vUVO5Y7yj+5nfPwXJNSkDN4XUjuerhvLkIKrf6xjMsKw8ORZEWeAKD+eWIP9G3mFyKoVauQwnQ==}
     dependencies:
-      '@suid/utils': 0.3.0_solid-js@1.4.7
+      '@suid/utils': 0.3.0_solid-js@1.4.8
     transitivePeerDependencies:
       - solid-js
     dev: false
 
-  /@suid/icons-material/0.2.6_solid-js@1.4.7:
+  /@suid/icons-material/0.2.6_solid-js@1.4.8:
     resolution: {integrity: sha512-YBfD/psgKaGdcBSQvClu1mCm6pyxfPKbvKh3SGmpeawdhqIvVW7cFzNBS0F+QZmxqyfSwuufG5DgkW71XBP3sg==}
     peerDependencies:
       solid-js: ^1.3.0
     dependencies:
-      '@suid/material': 0.5.0_solid-js@1.4.7
-      solid-js: 1.4.7
+      '@suid/material': 0.5.0_solid-js@1.4.8
+      solid-js: 1.4.8
     dev: false
 
-  /@suid/material/0.5.0_solid-js@1.4.7:
+  /@suid/material/0.5.0_solid-js@1.4.8:
     resolution: {integrity: sha512-8prPXDVHmge4VJzhmQbIX2Dfhw2fRb9MNYepwM08MY6WHpUIRw0lJEEAyxXsK/fMGihXEZqXaEeqsWmsiMzEog==}
     peerDependencies:
       solid-js: ^1.3.0
     dependencies:
-      '@suid/base': 0.2.5_solid-js@1.4.7
-      '@suid/css': 0.1.4_solid-js@1.4.7
-      '@suid/system': 0.4.2_solid-js@1.4.7
-      '@suid/types': 0.1.2_solid-js@1.4.7
-      '@suid/utils': 0.3.0_solid-js@1.4.7
+      '@suid/base': 0.2.5_solid-js@1.4.8
+      '@suid/css': 0.1.4_solid-js@1.4.8
+      '@suid/system': 0.4.2_solid-js@1.4.8
+      '@suid/types': 0.1.2_solid-js@1.4.8
+      '@suid/utils': 0.3.0_solid-js@1.4.8
       clsx: 1.2.1
-      solid-js: 1.4.7
+      solid-js: 1.4.8
     dev: false
 
-  /@suid/styled-engine/0.1.1_solid-js@1.4.7:
+  /@suid/styled-engine/0.1.1_solid-js@1.4.8:
     resolution: {integrity: sha512-VMv6eSuCWwBTKuWfHpdwAJep7n0RBlct+E8sah2xzT9zT2KkzEF6Im5cis+uUHHe00UBi/Vw9N5DSCuoVXfePg==}
     peerDependencies:
       solid-js: ^1.3.0
     dependencies:
-      '@suid/css': 0.1.4_solid-js@1.4.7
-      '@suid/utils': 0.3.0_solid-js@1.4.7
-      solid-js: 1.4.7
+      '@suid/css': 0.1.4_solid-js@1.4.8
+      '@suid/utils': 0.3.0_solid-js@1.4.8
+      solid-js: 1.4.8
     dev: false
 
-  /@suid/system/0.4.2_solid-js@1.4.7:
+  /@suid/system/0.4.2_solid-js@1.4.8:
     resolution: {integrity: sha512-gYCAsT/XFrkKmVe7e9FwulpVBdrRhyEhn2izXhV5tPieEao9mPeaw/hUb9pBpSWh/XRXkSR4BGUcURdU/r74uA==}
     peerDependencies:
       solid-js: ^1.3.0
     dependencies:
-      '@suid/css': 0.1.4_solid-js@1.4.7
-      '@suid/styled-engine': 0.1.1_solid-js@1.4.7
-      '@suid/types': 0.1.2_solid-js@1.4.7
-      '@suid/utils': 0.3.0_solid-js@1.4.7
+      '@suid/css': 0.1.4_solid-js@1.4.8
+      '@suid/styled-engine': 0.1.1_solid-js@1.4.8
+      '@suid/types': 0.1.2_solid-js@1.4.8
+      '@suid/utils': 0.3.0_solid-js@1.4.8
       clsx: 1.2.1
       csstype: 3.1.0
-      solid-js: 1.4.7
+      solid-js: 1.4.8
     dev: false
 
-  /@suid/types/0.1.2_solid-js@1.4.7:
+  /@suid/types/0.1.2_solid-js@1.4.8:
     resolution: {integrity: sha512-1heaPX6SF2EVXEdkfTZrxQnUMIOoY5ZCLA3osCriY5QZTK3xxczCoR2Dpn2Ri3p9UyrSkqVETnG9WDkoBBeW3Q==}
     peerDependencies:
       solid-js: ^1.3.0
     dependencies:
-      solid-js: 1.4.7
+      solid-js: 1.4.8
     dev: false
 
-  /@suid/utils/0.3.0_solid-js@1.4.7:
+  /@suid/utils/0.3.0_solid-js@1.4.8:
     resolution: {integrity: sha512-62A+r1O6Q0OuSJo3I2QC9RFOxwAPf3A9/ra8iSDmwYfTCnBOMjgdgEVIxQQabdjaLtqnAvnBjCNSUK/NI/oKyQ==}
     peerDependencies:
       solid-js: ^1.3.0
     dependencies:
-      '@suid/types': 0.1.2_solid-js@1.4.7
-      solid-js: 1.4.7
+      '@suid/types': 0.1.2_solid-js@1.4.8
+      solid-js: 1.4.8
     dev: false
 
   /@types/lodash/4.14.182:
@@ -980,18 +980,18 @@ packages:
     hasBin: true
     dev: true
 
-  /solid-app-router/0.4.2_solid-js@1.4.7:
+  /solid-app-router/0.4.2_solid-js@1.4.8:
     resolution: {integrity: sha512-+NrLcmqYssx8DcbpcLBaYPqfTRtS+rkfbxMhLH8MHfTcTkdZfrkWQK7lsUvuPCebGEzfaPZJvHqBwhPrCXAmxg==}
     peerDependencies:
       solid-js: ^1.3.5
     dependencies:
-      solid-js: 1.4.7
+      solid-js: 1.4.8
     dev: false
 
-  /solid-js/1.4.7:
-    resolution: {integrity: sha512-u3hoe5w3xseAc/8zLwYaQVGanWXknMMQkzryNz7lOPy2ygW6DhCtfMseun4kLflRNRzrUUpTV3W5p7j2SGcHCQ==}
+  /solid-js/1.4.8:
+    resolution: {integrity: sha512-XErZdnnYYXF7OwGSUAPcua2y5/ELB/c53zFCpWiEGqxTNoH1iQghzI8EsHJXk06sNn+Z/TGhb8bPDNNGSgimag==}
 
-  /solid-refresh/0.4.1_solid-js@1.4.7:
+  /solid-refresh/0.4.1_solid-js@1.4.8:
     resolution: {integrity: sha512-v3tD/OXQcUyXLrWjPW1dXZyeWwP7/+GQNs8YTL09GBq+5FguA6IejJWUvJDrLIA4M0ho9/5zK2e9n+uy+4488g==}
     peerDependencies:
       solid-js: ^1.3
@@ -999,7 +999,7 @@ packages:
       '@babel/generator': 7.18.7
       '@babel/helper-module-imports': 7.18.6
       '@babel/types': 7.18.8
-      solid-js: 1.4.7
+      solid-js: 1.4.8
     dev: true
 
   /source-map-js/1.0.2:
@@ -1049,7 +1049,7 @@ packages:
       picocolors: 1.0.0
     dev: true
 
-  /vite-plugin-solid/2.3.0_solid-js@1.4.7+vite@3.0.0:
+  /vite-plugin-solid/2.3.0_solid-js@1.4.8+vite@3.0.0:
     resolution: {integrity: sha512-N2sa54C3UZC2nN5vpj5o6YP+XdIAZW6n6xv8OasxNAcAJPFeZT7EOVvumL0V4c8hBz1yuYniMWdESY8807fVSg==}
     peerDependencies:
       solid-js: ^1.3.17
@@ -1059,8 +1059,8 @@ packages:
       '@babel/preset-typescript': 7.18.6_@babel+core@7.18.6
       babel-preset-solid: 1.4.6_@babel+core@7.18.6
       merge-anything: 5.0.2
-      solid-js: 1.4.7
-      solid-refresh: 0.4.1_solid-js@1.4.7
+      solid-js: 1.4.8
+      solid-refresh: 0.4.1_solid-js@1.4.8
       vite: 3.0.0
     transitivePeerDependencies:
       - supports-color

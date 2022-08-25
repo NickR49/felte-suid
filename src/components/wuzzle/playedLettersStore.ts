@@ -11,8 +11,19 @@ function createPlayedLetters() {
       ...playedLetters,
       [letter]: state,
     }));
+  const updatePlayedLetters = (letters: { [letter: string]: LetterState }) =>
+    setPlayedLetters((playedLetters) => ({
+      ...playedLetters,
+      ...letters,
+    }));
   const reset = () => setPlayedLetters({});
-  return { playedLetters, setPlayedLetters, updateLetter, reset };
+  return {
+    playedLetters,
+    setPlayedLetters,
+    updateLetter,
+    updatePlayedLetters,
+    reset,
+  };
 }
 
 export default createRoot(createPlayedLetters);

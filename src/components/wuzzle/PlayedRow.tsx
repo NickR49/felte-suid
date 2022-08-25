@@ -3,14 +3,13 @@ import { Component, createSignal, Index } from "solid-js";
 import playedLettersStore, { LetterState } from "./playedLettersStore";
 import styles from "./PlayedRow.module.css";
 
-interface Letter {
+export interface Letter {
   letter: string;
   occurrencesInWord: number;
   directMatches: number;
 }
-const letterDetails: Letter[] = [];
 
-function onlyUnique(value: string, index: number, self: string) {
+function onlyUnique(value: string, index: number, self: string[]) {
   return self.indexOf(value) === index;
 }
 
@@ -22,34 +21,28 @@ interface Props {
 const PlayedRow: Component<Props> = (props) => {
   const { playedLetters, reset, updateLetter } = playedLettersStore;
 
-  function storeLetterState(letter: string, state: LetterState) {
-    // console.log(`storeLetterState - letter: ${letter}, state: ${state}`);
-    // Check the existing state of the letter
-    // const currentState = $playedLettersStore[letter];
-    const currentState = playedLetters()[letter];
-    let update = false;
-    if (currentState === "correct") {
-      // do nothing
-    } else if (currentState === "present" && state === "correct") {
-      update = true;
-    } else if (
-      currentState === "absent" &&
-      ["present", "correct"].includes(state)
-    ) {
-      update = true;
-    } else if (!currentState) {
-      update = true;
-    }
+  const [letterDetails, setLetterDetails] = createSignal<Letter[]>([]);
 
-    if (update) {
-      //   playedLettersStore.update((playedLetters) => {
-      //     // console.log(`playedLettersStore: `, { ...playedLetters, letter: state });
-      //     return { ...playedLetters, [letter]: state };
-      //   });
-      updateLetter(letter, state);
-      console.log(`playedLettersStore: `, playedLetters);
-    }
-  }
+  // Analysis attempt
+  const uniqueLetters = props.guess.split("").filter(onlyUnique);
+  uniqueLetters.forEach((letter) => {
+    const occurrencesInWord = props.word
+      .split("")
+      .filter((l) => l === letter).length;
+    const directMatches = props.word.split("").filter((wordLetter, index) => {
+      if (
+        wordLetter === letter &&
+        props.guess.slice(index, index + 1) === letter
+      ) {
+        return true;
+      }
+      return false;
+    }).length;
+    setLetterDetails((letterDetails) => [
+      ...letterDetails,
+      { letter, occurrencesInWord, directMatches },
+    ]);
+  });
 
   function getLetterState(index: number): "correct" | "present" | "absent" {
     const guessLetter = props.guess.slice(index, index + 1);
@@ -61,8 +54,8 @@ const PlayedRow: Component<Props> = (props) => {
     // If the letter is elsewhere in the word then check if it's already a direct match
     else if (props.word.indexOf(guessLetter) > -1) {
       if (
-        letterDetails[index]?.directMatches ===
-        letterDetails[index]?.occurrencesInWord
+        letterDetails()[index]?.directMatches ===
+        letterDetails()[index]?.occurrencesInWord
       ) {
         letterState = "absent";
       } else {
@@ -71,7 +64,6 @@ const PlayedRow: Component<Props> = (props) => {
     } else {
       letterState = "absent";
     }
-    storeLetterState(guessLetter, letterState);
     return letterState;
   }
 

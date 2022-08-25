@@ -8,9 +8,8 @@ import {
   onMount,
   Show,
 } from "solid-js";
-import { createStore } from "solid-js/store";
-import { Portal } from "solid-js/web";
 import Modal from "@suid/material/Modal";
+import Paper from "@suid/material/Paper";
 
 import PlayedRow from "../components/wuzzle/PlayedRow";
 import { nonSolutions } from "../components/wuzzle/nonSolutions";
@@ -32,27 +31,21 @@ const Wuzzle: Component = () => {
   console.log(`solutionIndex: `, solutionIndex);
   console.log(`word: `, word);
 
-  // let gameState: "PLAYING" | "WON" | "LOST" = "PLAYING";
   const [gameState, setGameState] = createSignal<"PLAYING" | "WON" | "LOST">(
     "PLAYING"
   );
 
   // Guesses
-  // const guesses: string[] = [];
   const [guesses, setGuesses] = createSignal<string[]>([]);
-  // let guessIndex = 0;
   const [guessIndex, setGuessIndex] = createSignal(0);
   const [showWonModal, setShowWonModal] = createSignal(false);
   const [showLostModal, setShowLostModal] = createSignal(false);
   const [showInvalidWordModal, setShowInvalidWordModal] = createSignal(false);
 
-  // $: previousGuesses = guesses.slice(0, guessIndex);
   const previousGuesses = createMemo(() => guesses().slice(0, guessIndex()));
 
   // Current guess
-  // const currentGuess = ["", "", "", "", ""];
   const [currentGuess, setCurrentGuess] = createSignal(["", "", "", "", ""]);
-  // let guessLetterIndex = 0;
   const [guessLetterIndex, setGuessLetterIndex] = createSignal(0);
 
   onMount(() => window.addEventListener("keydown", handleWindowKeydown));
@@ -62,7 +55,6 @@ const Wuzzle: Component = () => {
     switch (key) {
       case "Backspace":
         if (guessLetterIndex() > 0) {
-          // guessLetterIndex--;
           setGuessLetterIndex((i) => i - 1);
           currentGuess()[guessLetterIndex()] = "";
         }
@@ -70,9 +62,9 @@ const Wuzzle: Component = () => {
       case "Enter":
         if (guessLetterIndex() === 5) {
           const guessWord = currentGuess().join("").toLowerCase();
+
           if (dictionary.includes(guessWord)) {
             guesses()[guessIndex()] = guessWord;
-            // guessLetterIndex = 0;
             setGuessLetterIndex(0);
             for (let i = 0; i < 5; i++) {
               // currentGuess[i] = "";
@@ -82,23 +74,17 @@ const Wuzzle: Component = () => {
                 return guess;
               });
             }
-            // guessIndex++;
             setGuessIndex((i) => i + 1);
             if (guessWord === word) {
-              // gameState = 'WON';
               setGameState("WON");
-              // showWonModal = true;
               setShowWonModal(true);
             } else {
               if (guessIndex() === 6) {
-                // gameState = 'LOST';
                 setGameState("LOST");
-                // showLostModal = true;
                 setShowLostModal(true);
               }
             }
           } else {
-            // showInvalidWordModal = true;
             setShowInvalidWordModal(true);
           }
         }
@@ -112,7 +98,6 @@ const Wuzzle: Component = () => {
             guess[guessLetterIndex()] = key.toLowerCase();
             return guess;
           });
-          // guessLetterIndex++;
           setGuessLetterIndex((i) => i + 1);
         }
     }
@@ -123,14 +108,6 @@ const Wuzzle: Component = () => {
     event.preventDefault();
     handleKeydown(event.key);
   }
-
-  function handleKeyboardKeydown(event: any) {
-    handleKeydown(event.detail);
-  }
-
-  // window.addEventListener("keydown", (event) => {
-  //   handleWindowKeydown(event);
-  // });
 
   let remarkIndex = -1;
   function wittism() {
@@ -206,6 +183,7 @@ const Wuzzle: Component = () => {
       <p>Guess letter index: {guessLetterIndex}</p>
       <p>Current guess: {currentGuess().join("")}</p>
       <p>Previous guesses: {JSON.stringify(previousGuesses())}</p>
+      <p>Letter state: {JSON.stringify(playedLetters())}</p>
       {/* <p>Show won modal: {showWonModal}</p>
 <p>Show lost modal: {showLostModal}</p>  */}
 
@@ -219,9 +197,14 @@ const Wuzzle: Component = () => {
 	keyClass={$playedLettersStore}
 /> */}
 
-      <Modal open={showInvalidWordModal()}>
-        <h2 slot="header">{wittism()}</h2>
-        <button onClick={() => setShowInvalidWordModal(false)}>Close</button>
+      <Modal
+        open={showInvalidWordModal()}
+        sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+      >
+        <Paper sx={{ width: 400, height: 300, padding: 4 }}>
+          <h2 slot="header">{wittism()}</h2>
+          <button onClick={() => setShowInvalidWordModal(false)}>Close</button>
+        </Paper>
       </Modal>
       <Modal open={showWonModal()}>
         <h1>{userRating()}</h1>

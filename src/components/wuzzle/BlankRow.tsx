@@ -1,4 +1,5 @@
-import { Component, createSignal, Index } from "solid-js";
+import { Component } from "solid-js";
+
 import styles from "./BlankRow.module.css";
 
 const BlankRow: Component = () => {
