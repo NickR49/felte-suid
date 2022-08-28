@@ -3,13 +3,13 @@ lockfileVersion: 5.4
 specifiers:
   '@felte/solid': ^1.2.3
   '@felte/validator-yup': ^1.0.9
-  '@suid/icons-material': ^0.2.6
-  '@suid/material': ^0.5.0
+  '@suid/icons-material': ^0.2.7
+  '@suid/material': ^0.5.1
   '@types/luxon': ^3.0.0
   luxon: ^3.0.1
   solid-app-router: ^0.4.2
   solid-js: ^1.5.1
-  typescript: ^4.7.4
+  typescript: ^4.8.2
   vite: ^3.0.9
   vite-plugin-solid: ^2.3.0
   yup: ^0.32.11
@@ -17,8 +17,8 @@ specifiers:
 dependencies:
   '@felte/solid': 1.2.3_solid-js@1.5.1
   '@felte/validator-yup': 1.0.9_yup@0.32.11
-  '@suid/icons-material': 0.2.6_solid-js@1.5.1
-  '@suid/material': 0.5.0_solid-js@1.5.1
+  '@suid/icons-material': 0.2.7_solid-js@1.5.1
+  '@suid/material': 0.5.1_solid-js@1.5.1
   luxon: 3.0.1
   solid-app-router: 0.4.2_solid-js@1.5.1
   solid-js: 1.5.1
@@ -26,7 +26,7 @@ dependencies:
 
 devDependencies:
   '@types/luxon': 3.0.0
-  typescript: 4.7.4
+  typescript: 4.8.2
   vite: 3.0.9
   vite-plugin-solid: 2.3.0_solid-js@1.5.1+vite@3.0.9
 
@@ -425,8 +425,8 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
-  /@popperjs/core/2.11.5:
-    resolution: {integrity: sha512-9X2obfABZuDVLCgPK9aX0a/x4jaOEweTTWE2+9sr0Qqqevj2Uv5XorvusThmc9XGYpS9yI+fhh8RTafBtGposw==}
+  /@popperjs/core/2.11.6:
+    resolution: {integrity: sha512-50/17A98tWUfQ176raKiOGXuYpLyyVMkxxG6oylzL3BPOlA6ADGdK7EYunSa4I064xerltq9TGXs8HmOk5E+vw==}
     dev: false
 
   /@suid/base/0.2.5_solid-js@1.5.1:
@@ -434,7 +434,7 @@ packages:
     peerDependencies:
       solid-js: ^1.3.0
     dependencies:
-      '@popperjs/core': 2.11.5
+      '@popperjs/core': 2.11.6
       '@suid/css': 0.1.4_solid-js@1.5.1
       '@suid/system': 0.4.2_solid-js@1.5.1
       '@suid/types': 0.1.2_solid-js@1.5.1
@@ -451,17 +451,17 @@ packages:
       - solid-js
     dev: false
 
-  /@suid/icons-material/0.2.6_solid-js@1.5.1:
-    resolution: {integrity: sha512-YBfD/psgKaGdcBSQvClu1mCm6pyxfPKbvKh3SGmpeawdhqIvVW7cFzNBS0F+QZmxqyfSwuufG5DgkW71XBP3sg==}
+  /@suid/icons-material/0.2.7_solid-js@1.5.1:
+    resolution: {integrity: sha512-Qvi6eJaiUMSsHAvF7E2RfTQMtANdgIsxFTB2u78CsTTFjv5o3urkqPSKtnuzEhRBGkEA5y553AhLY/EW3UTerw==}
     peerDependencies:
       solid-js: ^1.3.0
     dependencies:
-      '@suid/material': 0.5.0_solid-js@1.5.1
+      '@suid/material': 0.5.1_solid-js@1.5.1
       solid-js: 1.5.1
     dev: false
 
-  /@suid/material/0.5.0_solid-js@1.5.1:
-    resolution: {integrity: sha512-8prPXDVHmge4VJzhmQbIX2Dfhw2fRb9MNYepwM08MY6WHpUIRw0lJEEAyxXsK/fMGihXEZqXaEeqsWmsiMzEog==}
+  /@suid/material/0.5.1_solid-js@1.5.1:
+    resolution: {integrity: sha512-3Gfsy8FvlhaokzcjJTQOTLBlpSYmhtl66BXNXWhnJlrQzxL0MSCg3QUhiaBn0atEjZ4MzZisPearr/JSsRoRsQ==}
     peerDependencies:
       solid-js: ^1.3.0
     dependencies:
@@ -1043,8 +1043,8 @@ packages:
     resolution: {integrity: sha512-nsZd8ZeNUzukXPlJmTBwUAuABDe/9qtVDelJeT/qW0ow3ZS3BsQJtNkan1802aM9Uf68/Y8ljw86Hu0h5IUW3w==}
     dev: true
 
-  /typescript/4.7.4:
-    resolution: {integrity: sha512-C0WQT0gezHuw6AdY1M2jxUO83Rjf0HP7Sk1DtXj6j1EwkQNZrHAg2XPWlq62oqEhYvONq5pkC2Y9oPljWToLmQ==}
+  /typescript/4.8.2:
+    resolution: {integrity: sha512-C0I1UsrrDHo2fYI5oaCGbSejwX4ch+9Y5jTQELvovfmFkK3HHSZJB8MSJcWLmCUBzQBchCrZ9rMRV6GuNrvGtw==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
